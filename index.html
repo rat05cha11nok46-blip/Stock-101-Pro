@@ -24,11 +24,11 @@ body{min-height:100vh;display:flex;justify-content:center;align-items:center;pad
 .icon-btn{background:var(--panel);border:1px solid var(--border);color:var(--text);width:34px;height:34px;border-radius:50%;display:flex;justify-content:center;align-items:center;cursor:pointer;position:relative;font-size:.9rem}
 .notif-badge{position:absolute;top:-2px;right:-2px;background:var(--red);color:#fff;font-size:.55rem;padding:2px 5px;border-radius:10px;font-weight:700}
 
-/* Navigation Menu รองรับ 6 แท็บหลัก */
-nav{position:fixed;z-index:100;left:50%;bottom:max(10px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(416px,calc(100% - 28px));display:grid;grid-template-columns:repeat(6,1fr);gap:2px;padding:8px 5px;background:#0b1624ee;backdrop-filter:blur(16px);border:1px solid #29415a;border-radius:20px;box-shadow:0 10px 35px #0008}
-nav button{border:0;background:transparent;padding:6px 1px;border-radius:13px;font-size:.52rem;color:#9fb2c8;white-space:nowrap;cursor:pointer;text-align:center}
-nav button:before{display:block;font-size:.9rem;margin-bottom:1px}
-nav button.tab-home:before{content:"⌂"}nav button.tab-learn:before{content:"🎓"}nav button.tab-dashboard:before{content:"📊"}nav button.tab-dca:before{content:"📅"}nav button.tab-portfolio:before{content:"💼"}nav button.tab-admin:before{content:"🛠️"}
+/* Navigation Menu รองรับ 8 แท็บหลัก */
+nav{position:fixed;z-index:100;left:50%;bottom:max(10px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(416px,calc(100% - 28px));display:grid;grid-template-columns:repeat(7,1fr);gap:2px;padding:8px 4px;background:#0b1624ee;backdrop-filter:blur(16px);border:1px solid #29415a;border-radius:20px;box-shadow:0 10px 35px #0008}
+nav button{border:0;background:transparent;padding:6px 1px;border-radius:11px;font-size:.48rem;color:#9fb2c8;white-space:nowrap;cursor:pointer;text-align:center}
+nav button:before{display:block;font-size:.85rem;margin-bottom:1px}
+nav button.tab-home:before{content:"⌂"}nav button.tab-learn:before{content:"🎓"}nav button.tab-trade:before{content:"🔄"}nav button.tab-status:before{content:"📌"}nav button.tab-dashboard:before{content:"📊"}nav button.tab-dca:before{content:"📅"}nav button.tab-portfolio:before{content:"💼"}nav button.tab-admin:before{content:"🛠️"}
 nav button.active{background:#1677e855;color:#53b5ff;font-weight:700}
 
 .tab{display:none}.tab.active{display:block}
@@ -62,11 +62,19 @@ nav button.active{background:#1677e855;color:#53b5ff;font-weight:700}
 .notice{padding:10px 12px;border-radius:12px;background:#10283a;border:1px solid #1d4663;color:#c9e8ff;margin-top:8px;font-size:.75rem}
 .footer{padding:16px 0 8px;color:var(--muted);font-size:.7rem;text-align:center}
 
+/* Badges สำหรับสถานะ */
+.badge{padding:3px 7px;border-radius:8px;font-size:.62rem;font-weight:700;display:inline-block}
+.badge-pending{background:#3a2e11;color:var(--gold)}
+.badge-processing{background:#112d4e;color:var(--accent)}
+.badge-completed{background:#113a27;color:var(--green)}
+.badge-cancelled{background:#3a1818;color:var(--red)}
+
+.badge-free{background:#113a27;color:var(--green);padding:2px 8px;border-radius:8px;font-size:.62rem;font-weight:700}
+.badge-locked{background:#3a1818;color:var(--red);padding:2px 8px;border-radius:8px;font-size:.62rem;font-weight:700}
+
 /* Course & Chat UI */
 .course-card{background:linear-gradient(145deg,#102238,#0a1725);border:1px solid var(--border);border-radius:14px;padding:12px;margin-bottom:8px;display:flex;flex-direction:column;gap:6px}
 .course-header{display:flex;justify-content:space-between;align-items:center}
-.badge-free{background:#113a27;color:var(--green);padding:2px 8px;border-radius:8px;font-size:.62rem;font-weight:700}
-.badge-locked{background:#3a1818;color:var(--red);padding:2px 8px;border-radius:8px;font-size:.62rem;font-weight:700}
 
 .chat-box{background:#050d18;border:1px solid var(--border);border-radius:12px;height:220px;overflow:auto;padding:10px;display:flex;flex-direction:column;gap:8px;margin-bottom:8px}
 .chat-msg{max-width:80%;padding:8px 10px;border-radius:10px;font-size:.75rem;line-height:1.4}
@@ -74,12 +82,10 @@ nav button.active{background:#1677e855;color:#53b5ff;font-weight:700}
 .chat-msg.admin{background:#182e46;color:var(--text);align-self:flex-start;border:1px solid var(--border)}
 .chat-input-row{display:flex;gap:6px}
 
-/* Notification Drawer / Modal */
 .notif-dropdown{position:absolute;top:55px;right:14px;width:320px;background:var(--panel);border:1px solid var(--border);border-radius:16px;box-shadow:0 15px 40px #000a;z-index:200;display:none;padding:12px}
 .notif-item{padding:8px 10px;border-bottom:1px solid var(--border);font-size:.75rem;display:flex;flex-direction:column;gap:2px}
 .notif-item:last-child{border-bottom:0}
 
-/* Modals */
 .modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(2,8,18,0.85);backdrop-filter:blur(8px);display:flex;justify-content:center;align-items:center;z-index:1000}
 .modal-card{background:var(--panel);border:1px solid var(--border);padding:20px;border-radius:20px;width:90%;max-width:360px;box-shadow:0 12px 40px #0008}
 .modal-card h2{margin-top:0;font-size:1.2rem}
@@ -93,7 +99,7 @@ nav button.active{background:#1677e855;color:#53b5ff;font-weight:700}
 </head>
 <body>
 
-<!-- Login Modal -->
+<!-- Login Modal (1. ผู้ใช้และสิทธิ์) -->
 <div id="loginModal" class="modal-overlay">
   <div class="modal-card">
     <h2>🔐 เข้าสู่ระบบ</h2>
@@ -139,7 +145,7 @@ nav button.active{background:#1677e855;color:#53b5ff;font-weight:700}
     <div id="currentUserBadge" class="user-badge">ผู้ใช้: กำลังโหลด...</div>
   </div>
   <div class="header-actions">
-    <!-- ปุ่มกระดิ่งแจ้งเตือน -->
+    <!-- ปุ่มกระดิ่งแจ้งเตือน (6. การแจ้งเตือน) -->
     <div class="icon-btn" onclick="toggleNotifDrawer()">
       🔔
       <span id="notifCount" class="notif-badge">2</span>
@@ -148,7 +154,7 @@ nav button.active{background:#1677e855;color:#53b5ff;font-weight:700}
   </div>
 </header>
 
-<!-- กล่องป๊อปอัปแจ้งเตือน (Notification Drawer) -->
+<!-- Notification Drawer (6. การแจ้งเตือน) -->
 <div id="notifDrawer" class="notif-dropdown">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
     <strong>📬 การแจ้งเตือนล่าสุด</strong>
@@ -157,12 +163,13 @@ nav button.active{background:#1677e855;color:#53b5ff;font-weight:700}
   <div id="notifList"></div>
 </div>
 
-<!-- Navigation Menu (6 แท็บหลักรวม Dashboard และ บทเรียน) -->
+<!-- Navigation Menu -->
 <nav id="mainNav">
   <button class="tab-home active" data-tab="home">หน้าหลัก</button>
+  <button class="tab-trade" data-tab="trade">เทรด</button>
+  <button class="tab-status" data-tab="status">สถานะ</button>
   <button class="tab-learn" data-tab="learn">บทเรียน</button>
-  <button class="tab-dashboard" data-tab="dashboard">รายงานผล</button>
-  <button class="tab-dca" data-tab="dca">DCA</button>
+  <button class="tab-dashboard" data-tab="dashboard">แดชบอร์ด</button>
   <button class="tab-portfolio" data-tab="portfolio">พอร์ต</button>
   <button id="navAdmin" class="tab-admin" data-tab="admin" style="display:none;color:var(--gold);">Admin</button>
 </nav>
@@ -174,7 +181,7 @@ nav button.active{background:#1677e855;color:#53b5ff;font-weight:700}
 <div class="hero">
   <h2>เรียนหุ้นแบบโปรกับกูรู</h2>
   <p>คอร์สฝึกเทรดเสมือนจริง บทเรียนจัดเต็ม พร้อมแดชบอร์ดรายงานผลพอร์ตโฟลิโอและระบบแจ้งเตือนเรียลไทม์</p>
-  <button class="btn primary" onclick="showTab('learn')">ไปที่บทเรียนทั้งหมด →</button>
+  <button class="btn primary" onclick="showTab('trade')">เริ่มส่งคำสั่งซื้อขาย →</button>
 </div>
 <div class="notice">💡 แตะที่ไอคอนกระดิ่งมุมบนขวาเพื่อดูการแจ้งเตือนพอร์ตและคอร์สเรียน</div>
 <div class="grid" style="margin-top:10px;">
@@ -185,7 +192,36 @@ nav button.active{background:#1677e855;color:#53b5ff;font-weight:700}
 </div>
 </section>
 
-<!-- TAB: บทเรียน & แชทกับแอดมิน -->
+<!-- TAB: 3. ธุรกรรมหลัก (กระบวนการซื้อ/ขายหุ้นตั้งแต่ต้นจนจบ) -->
+<section id="trade" class="tab">
+<div class="card">
+  <h2>🔄 ส่งคำสั่งซื้อขายหุ้น (Main Process)</h2>
+  <p class="muted" style="font-size:.74rem;margin-bottom:10px;">ทำกระบวนการซื้อหุ้น: เลือกหุ้น → ส่งคำสั่ง -> จับคู่ -> บันทึกเข้าพอร์ต</p>
+  <div class="formgrid">
+    <div class="field"><label>เลือกหุ้นที่ต้องการซื้อ</label><select id="tradeStock" onchange="updateTradePrice()"></select></div>
+    <div class="field"><label>ราคาตลาดปัจจุบัน (บาท)</label><input id="tradePrice" type="number" readonly style="color:var(--accent);font-weight:bold;"></div>
+    <div class="field"><label>จำนวนหุ้น</label><input id="tradeShares" type="number" value="100" min="1"></div>
+    <div class="field"><label>มูลค่ารวมประมาณการ</label><input id="tradeTotal" type="text" value="฿0" readonly></div>
+    <button class="btn primary" onclick="processOrderTransaction()">🚀 ยืนยันส่งคำสั่งซื้อ (Create Order)</button>
+  </div>
+</div>
+</section>
+
+<!-- TAB: 5. การติดตามสถานะ (Status Tracking) -->
+<section id="status" class="tab">
+<div class="card">
+  <h2>📌 ติดตามสถานะคำสั่งซื้อขาย</h2>
+  <p class="muted" style="font-size:.74rem;margin-bottom:10px;">ตรวจสอบสถานะธุรกรรมเรียลไทม์ (รอจับคู่ -> กำลังส่ง -> สำเร็จ)</p>
+  <div style="overflow:auto;max-height:350px;">
+    <table class="table">
+      <thead><tr><th>Order ID</th><th>หุ้น</th><th>จำนวน</th><th>ราคารวม</th><th>สถานะ</th><th>จัดการ</th></tr></thead>
+      <tbody id="orderStatusBody"></tbody>
+    </table>
+  </div>
+</div>
+</section>
+
+<!-- TAB: บทเรียน & แชท -->
 <section id="learn" class="tab">
 <div class="hero" style="min-height:115px;padding:14px;">
   <h2>🎓 หลักสูตรหุ้น Pro Academy</h2>
@@ -199,106 +235,48 @@ nav button.active{background:#1677e855;color:#53b5ff;font-weight:700}
   <button class="btn primary" style="padding:5px 10px;font-size:.7rem;" onclick="filterCourses('chat', this)">💬 แชทแอดมิน</button>
 </div>
 
-<!-- รายการบทเรียน -->
 <div id="courseListContainer">
   <div class="course-card" data-cat="free">
-    <div class="course-header">
-      <strong>บทที่ 1: พื้นฐานหุ้นและตลาดหลักทรัพย์</strong>
-      <span class="badge-free">ฟรี</span>
-    </div>
+    <div class="course-header"><strong>บทที่ 1: พื้นฐานหุ้นและตลาดหลักทรัพย์</strong><span class="badge-free">ฟรี</span></div>
     <p class="muted" style="font-size:.74rem;margin:0;">ทำความเข้าใจว่าหุ้นคืออะไร ระดมทุนอย่างไร และเปิดพอร์ตครั้งแรก</p>
     <button class="btn primary" style="padding:5px 10px;font-size:.7rem;width:max-content;" onclick="openLesson(1, 'ฟรี')">เข้าเรียน</button>
   </div>
-
   <div class="course-card" data-cat="free">
-    <div class="course-header">
-      <strong>บทที่ 2: อ่านงบการเงินและอัตราส่วน P/E</strong>
-      <span class="badge-free">ฟรี</span>
-    </div>
+    <div class="course-header"><strong>บทที่ 2: อ่านงบการเงินและอัตราส่วน P/E</strong><span class="badge-free">ฟรี</span></div>
     <p class="muted" style="font-size:.74rem;margin:0;">วิเคราะห์งบกำไรขาดทุน สินทรัพย์ และเลือกหุ้นไม่ให้ติดดอย</p>
     <button class="btn primary" style="padding:5px 10px;font-size:.7rem;width:max-content;" onclick="openLesson(2, 'ฟรี')">เข้าเรียน</button>
   </div>
-
   <div class="course-card" data-cat="pro">
-    <div class="course-header">
-      <strong>บทที่ 3: สแกนหุ้นด้วยกราฟเทคนิค (RSI/MACD)</strong>
-      <span id="badge-c3" class="badge-locked">🔒 ล็อก VIP</span>
-    </div>
+    <div class="course-header"><strong>บทที่ 3: สแกนหุ้นด้วยกราฟเทคนิค (RSI/MACD)</strong><span id="badge-c3" class="badge-locked">🔒 ล็อก VIP</span></div>
     <p class="muted" style="font-size:.74rem;margin:0;">เทคนิคจับจังหวะซื้อขายทำกำไรระยะสั้นแบบมือโปร</p>
     <button id="btn-c3" class="btn gold-btn" style="padding:5px 10px;font-size:.7rem;width:max-content;" onclick="accessCourse(3)">ปลดล็อก (฿990)</button>
   </div>
-
-  <div class="course-card" data-cat="pro">
-    <div class="course-header">
-      <strong>บทที่ 4: กลยุทธ์พอร์ตปันผลสร้างกระแสเงินสด</strong>
-      <span id="badge-c4" class="badge-locked">🔒 ล็อก VIP</span>
-    </div>
-    <p class="muted" style="font-size:.74rem;margin:0;">สูตรจัดพอร์ตรับเงินปันผลทุกไตรมาสอย่างยั่งยืน</p>
-    <button id="btn-c4" class="btn gold-btn" style="padding:5px 10px;font-size:.7rem;width:max-content;" onclick="accessCourse(4)">ปลดล็อก (฿990)</button>
-  </div>
-
-  <div class="course-card" data-cat="pro">
-    <div class="course-header">
-      <strong>บทที่ 5: จิตวิทยาการลงทุนและตั้งจุด Stop Loss</strong>
-      <span id="badge-c5" class="badge-locked">🔒 ล็อก VIP</span>
-    </div>
-    <p class="muted" style="font-size:.74rem;margin:0;">ควบคุมอารมณ์ บริหารความเสี่ยงและหนีตายยามตลาดผันผวน</p>
-    <button id="btn-c5" class="btn gold-btn" style="padding:5px 10px;font-size:.7rem;width:max-content;" onclick="accessCourse(5)">ปลดล็อก (฿990)</button>
-  </div>
 </div>
 
-<!-- ช่องแชทกับแอดมิน -->
 <div id="chatSection" class="card" style="display:none;margin-top:5px;">
   <h3>💬 แชทปรึกษาแอดมิน / อาจารย์ผู้สอน</h3>
-  <p class="muted" style="font-size:.7rem;margin-bottom:6px;">สอบถามข้อสงสัยการบ้าน กราฟเทคนิค หรือเนื้อหาคอร์สได้ทันที</p>
   <div class="chat-box" id="chatMessages"></div>
   <div class="chat-input-row">
     <input id="chatInput" placeholder="พิมพ์คำถามถึงอาจารย์..." onkeypress="if(event.key==='Enter') sendChatMessage()">
     <button class="btn primary" onclick="sendChatMessage()">ส่ง</button>
   </div>
 </div>
-
 </section>
 
-<!-- TAB: 📊 Dashboard รายงานผลขั้นสูง -->
+<!-- TAB: 7. Dashboard และรายงาน -->
 <section id="dashboard" class="tab">
 <div class="card">
   <h2>📊 Dashboard รายงานผลพอร์ต</h2>
-  <p class="muted" style="font-size:.74rem;margin-bottom:10px;">วิเคราะห์ประสิทธิภาพการลงทุนและการกระจายความเสี่ยง</p>
-  
   <div class="grid" style="margin-bottom:10px;">
     <div class="card"><span class="muted" style="font-size:.65rem">มูลค่าพอร์ตสุทธิ</span><div class="metric" id="dashVal">฿0</div></div>
     <div class="card"><span class="muted" style="font-size:.65rem">ผลตอบแทนรวม (%)</span><div class="metric" id="dashPct">0%</div></div>
     <div class="card"><span class="muted" style="font-size:.65rem">กำไร/ขาดทุนบาท</span><div class="metric" id="dashProfit">฿0</div></div>
     <div class="card"><span class="muted" style="font-size:.65rem">สถานะสมาชิก</span><div class="metric gold" id="dashRole" style="font-size:.9rem;">VIP</div></div>
   </div>
-
   <div class="card">
     <h3 style="font-size:.85rem;margin-bottom:6px;">สัดส่วนการลงทุนในพอร์ต</h3>
     <div class="chartbox"><canvas id="portfolioChart"></canvas></div>
   </div>
-  
-  <div class="notice">💡 ระบบรายงานผลจะคำนวณราคาหุ้นแบบเรียลไทม์และแจ้งเตือนเมื่อพอร์ตกำไรเกินเป้าหมาย</div>
-</div>
-</section>
-
-<!-- TAB: DCA -->
-<section id="dca" class="tab">
-<div class="card">
-  <h2>📅 คำนวณ DCA</h2>
-  <div class="formgrid">
-    <div class="field"><label>เลือกหุ้น</label><select id="dcaStock"></select></div>
-    <div class="field"><label>เงินลงทุน/งวด (บาท)</label><input id="dcaAmount" type="number" value="3000" min="1"></div>
-    <div class="field"><label>จำนวนงวด (เดือน)</label><input id="dcaMonths" type="number" value="24" min="1"></div>
-    <button class="btn primary" onclick="calcDCA()">คำนวณอัตโนมัติ</button>
-  </div>
-  <div class="grid" style="margin-top:10px">
-    <div class="card"><span class="muted" style="font-size:.68rem">เงินลงทุนรวม</span><div class="metric" id="dcaCost">฿0</div></div>
-    <div class="card"><span class="muted" style="font-size:.68rem">หุ้นสะสม</span><div class="metric" id="dcaShares">0</div></div>
-    <div class="card"><span class="muted" style="font-size:.68rem">มูลค่าปัจจุบัน</span><div class="metric" id="dcaValue">฿0</div></div>
-    <div class="card"><span class="muted" style="font-size:.68rem">กำไร/ขาดทุน</span><div class="metric" id="dcaProfit">฿0</div></div>
-  </div>
-  <div class="chartbox"><canvas id="dcaChart"></canvas></div>
 </div>
 </section>
 
@@ -306,13 +284,7 @@ nav button.active{background:#1677e855;color:#53b5ff;font-weight:700}
 <section id="portfolio" class="tab">
 <div class="card">
   <h2>💼 บันทึกพอร์ตหุ้น</h2>
-  <div class="formgrid">
-    <div class="field"><label>หุ้น</label><select id="pStock"></select></div>
-    <div class="field"><label>จำนวนหุ้น</label><input id="pShares" type="number" min="1" value="10"></div>
-    <div class="field"><label>ราคาซื้อเฉลี่ย</label><input id="pBuy" type="number" min="0" step=".01" value="100"></div>
-    <button class="btn primary" onclick="addPortfolio()">บันทึกซื้อหุ้น</button>
-  </div>
-  <div style="overflow:auto;margin-top:10px;max-height:220px;">
+  <div style="overflow:auto;margin-top:10px;max-height:260px;">
     <table class="table">
       <thead><tr><th>หุ้น</th><th>จำนวน</th><th>ซื้อ</th><th>ปัจจุบัน</th><th>กำไร</th><th>จัดการ</th></tr></thead>
       <tbody id="portfolioBody"></tbody>
@@ -321,16 +293,16 @@ nav button.active{background:#1677e855;color:#53b5ff;font-weight:700}
 </div>
 </section>
 
-<!-- TAB: Admin -->
+<!-- TAB: 2. จัดการข้อมูล (Admin เพิ่ม/ลบ ข้อมูลหลักได้) -->
 <section id="admin" class="tab">
 <div class="card">
-  <h2>🛠️ จัดการระบบ (Admin)</h2>
+  <h2>🛠️ จัดการข้อมูลหุ้นหลัก (Admin Data Management)</h2>
   <div class="formgrid" style="margin-bottom:10px;">
     <div class="field"><label>Symbol</label><input id="admSymbol" placeholder="เช่น PTT"></div>
     <div class="field"><label>ชื่อบริษัท</label><input id="admName" placeholder="ชื่อบริษัท"></div>
     <div class="field"><label>ตลาด</label><select id="admGroup"><option value="th">หุ้นไทย</option><option value="us">ต่างประเทศ</option></select></div>
-    <div class="field"><label>ราคา</label><input id="admPrice" type="number" value="50"></div>
-    <button class="btn primary" onclick="adminAddStock()">+ เพิ่มหุ้น</button>
+    <div class="field"><label>ราคาเปิด</label><input id="admPrice" type="number" value="50"></div>
+    <button class="btn primary" onclick="adminAddStock()">+ เพิ่มข้อมูลหุ้นหลัก</button>
   </div>
   <div style="overflow:auto;max-height:180px;">
     <table class="table">
@@ -363,16 +335,17 @@ function makeInitialStocks(){
 
 let stocks = JSON.parse(localStorage.getItem("stock101_stocks")) || makeInitialStocks();
 let portfolio = JSON.parse(localStorage.getItem("stock101_portfolio") || "[]");
+let orders = JSON.parse(localStorage.getItem("stock101_orders") || "[]");
 let currentUser = JSON.parse(localStorage.getItem("stock101_user")) || {name: "Ratchanok M.", role: "vip"};
 let chatHistory = JSON.parse(localStorage.getItem("stock101_chat") || "[]");
 let notifications = JSON.parse(localStorage.getItem("stock101_notifs") || JSON.stringify([
-  {title: "ยินดีต้อนรับสู่ Stock 101 Pro", desc: "เริ่มต้นเรียนรู้หุ้นและสร้างพอร์ตจำลองได้เลยครับ", time: "เมื่อวาน"},
-  {title: "แจ้งเตือนตลาดหุ้น", desc: "ดัชนี SET วันนี้แกว่งตัวในกรอบแคบ จับตาหุ้นกลุ่มพลังงาน", time: "วันนี้"}
+  {title: "ยินดีต้อนรับสู่ Stock 101 Pro", desc: "เริ่มต้นเรียนรู้หุ้นและสร้างพอร์ตจำลองได้เลยครับ", time: "เมื่อวาน"}
 ]));
-let dcaChart, portfolioChart;
+let portfolioChart;
 
 function money(n){return new Intl.NumberFormat("th-TH",{style:"currency",currency:"THB",maximumFractionDigits:0}).format(n||0)}
 
+/* 1. ผู้ใช้และสิทธิ์ */
 function openLoginModal(){
   document.getElementById("loginModal").style.display = "flex";
   document.getElementById("loginName").value = currentUser.name;
@@ -397,7 +370,7 @@ function applyRolePermissions(){
   
   let roleText = "👤 สมาชิกทั่วไป";
   if(currentUser.role === 'vip') roleText = "⭐ สมาชิก VIP";
-  if(currentUser.role === 'admin') roleText = "🛠️ แอดมิน / อาจารย์";
+  if(currentUser.role === 'admin') roleText = "🛠️️ แอดมิน / อาจารย์";
   badge.textContent = `${currentUser.name} (${roleText})`;
   
   let dashRoleEl = document.getElementById("dashRole");
@@ -405,42 +378,102 @@ function applyRolePermissions(){
 
   if(currentUser.role === 'admin'){
     navAdmin.style.display = "block";
-    navEl.style.gridTemplateColumns = "repeat(6, 1fr)";
+    navEl.style.gridTemplateColumns = "repeat(7, 1fr)";
   } else {
     navAdmin.style.display = "none";
-    navEl.style.gridTemplateColumns = "repeat(5, 1fr)";
+    navEl.style.gridTemplateColumns = "repeat(6, 1fr)";
     if(document.getElementById("admin").classList.contains("active")) showTab('home');
   }
+}
 
-  let isUnlocked = (currentUser.role === 'vip' || currentUser.role === 'admin');
-  [3, 4, 5].forEach(id => {
-    let badgeEl = document.getElementById(`badge-c${id}`);
-    let btnEl = document.getElementById(`btn-c${id}`);
-    if(badgeEl && btnEl){
-      if(isUnlocked){
-        badgeEl.className = "badge-free";
-        badgeEl.textContent = "ปลดล็อกแล้ว (VIP)";
-        btnEl.textContent = "เข้าเรียน";
-        btnEl.className = "btn primary";
-        btnEl.onclick = () => openLesson(id, 'VIP');
-      } else {
-        badgeEl.className = "badge-locked";
-        badgeEl.textContent = "🔒 ล็อก VIP";
-        btnEl.textContent = "ปลดล็อก (฿990)";
-        btnEl.className = "btn gold-btn";
-        btnEl.onclick = () => accessCourse(id);
-      }
+/* 3. ธุรกรรมหลัก (Main Transaction Process) */
+function updateTradePrice(){
+  let idx = +document.getElementById("tradeStock").value;
+  let s = stocks[idx];
+  if(s){
+    document.getElementById("tradePrice").value = s.price;
+    let shares = +document.getElementById("tradeShares").value || 0;
+    document.getElementById("tradeTotal").value = money(shares * s.price);
+  }
+}
+
+document.getElementById("tradeShares").addEventListener("input", updateTradePrice);
+
+function processOrderTransaction(){
+  let idx = +document.getElementById("tradeStock").value;
+  let s = stocks[idx];
+  let shares = +document.getElementById("tradeShares").value;
+  if(!s || shares <= 0) return;
+
+  let orderId = "ORD-" + Math.floor(1000 + Math.random() * 9000);
+  let newOrder = {
+    id: orderId,
+    symbol: s.symbol,
+    shares: shares,
+    buyPrice: s.price,
+    total: shares * s.price,
+    status: 'รอจับคู่' // สถานะเริ่มต้น
+  };
+
+  orders.unshift(newOrder);
+  localStorage.setItem("stock101_orders", JSON.stringify(orders));
+  
+  addNotification("สร้างออเดอร์สำเร็จ", `ส่งคำสั่งซื้อ ${s.symbol} จำนวน ${shares} หุ้นแล้ว (${orderId})`);
+  showAlert(`ส่งคำสั่งซื้อ ${s.symbol} สำเร็จ! สถานะ: รอการจับคู่`, 'success');
+  
+  renderOrders();
+  showTab('status'); // เปลี่ยนไปหน้าติดตามสถานะ
+}
+
+/* 5. การติดตามสถานะ (Status Tracking) */
+function renderOrders(){
+  let tbody = document.getElementById("orderStatusBody");
+  if(!tbody) return;
+
+  tbody.innerHTML = orders.map((o, i) => {
+    let badgeClass = "badge-pending";
+    if(o.status === 'กำลังส่ง') badgeClass = "badge-processing";
+    if(o.status === 'ส่งสำเร็จ') badgeClass = "badge-completed";
+    if(o.status === 'ยกเลิก') badgeClass = "badge-cancelled";
+
+    let actionBtn = "";
+    if(o.status === 'รอจับคู่'){
+      actionBtn = `<button class="btn primary" style="font-size:0.6rem;padding:2px 5px;" onclick="advanceOrderStatus(${i})">อนุมัติจับคู่</button>`;
+    } else if(o.status === 'กำลังส่ง'){
+      actionBtn = `<button class="btn gold-btn" style="font-size:0.6rem;padding:2px 5px;" onclick="advanceOrderStatus(${i})">ปิดงาน/โอนเข้าพอร์ต</button>`;
+    } else {
+      actionBtn = `<span class="muted">-</span>`;
     }
-  });
+
+    return `<tr>
+      <td><small>${o.id}</small></td>
+      <td><strong>${o.symbol}</strong></td>
+      <td>${o.shares}</td>
+      <td>${money(o.total)}</td>
+      <td><span class="badge ${badgeClass}">${o.status}</span></td>
+      <td>${actionBtn}</td>
+    </tr>`;
+  }).join("") || `<tr><td colspan="6" style="text-align:center;" class="muted">ไม่มีรายการคำสั่งซื้อขาย</td></tr>`;
 }
 
-function showAlert(msg, type='info'){
-  const container = document.getElementById("alertContainer");
-  const bg = type === 'success' ? '#113a27' : '#10283a';
-  container.innerHTML = `<div class="notice" style="background:${bg}; margin-bottom:8px;">🔔 ${msg}</div>`;
-  setTimeout(() => { container.innerHTML = ''; }, 4000);
+function advanceOrderStatus(index){
+  let o = orders[index];
+  if(o.status === 'รอจับคู่'){
+    o.status = 'กำลังส่ง';
+    addNotification("อัปเดตสถานะคำสั่ง", `คำสั่ง ${o.id} (${o.symbol}) กำลังดำเนินการส่งเข้าตลาด`);
+  } else if(o.status === 'กำลังส่ง'){
+    o.status = 'ส่งสำเร็จ';
+    // เพิ่มเข้าพอร์ตเมื่อสำเร็จ
+    portfolio.push({symbol: o.symbol, shares: o.shares, buy: o.buyPrice});
+    localStorage.setItem("stock101_portfolio", JSON.stringify(portfolio));
+    updatePortfolio();
+    addNotification("ธุรกรรมสำเร็จ", `คำสั่ง ${o.id} (${o.symbol}) ส่งสำเร็จแล้ว หุ้นถูกเข้าพอร์ตเรียบร้อย!`);
+  }
+  localStorage.setItem("stock101_orders", JSON.stringify(orders));
+  renderOrders();
 }
 
+/* 6. การแจ้งเตือน */
 function addNotification(title, desc){
   notifications.unshift({title, desc, time: "เมื่อสักครู่"});
   if(notifications.length > 10) notifications.pop();
@@ -472,91 +505,14 @@ function clearNotifs(){
   updateNotifUI();
 }
 
-function showTab(id){
-  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
-  document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("active", b.classList.contains(`tab-${id}`)));
-  if(id === "admin") renderAdminStocks();
-  if(id === "learn") renderChatMessages();
-  if(id === "dashboard") updateDashboard();
+function showAlert(msg, type='info'){
+  const container = document.getElementById("alertContainer");
+  const bg = type === 'success' ? '#113a27' : '#10283a';
+  container.innerHTML = `<div class="notice" style="background:${bg}; margin-bottom:8px;">🔔 ${msg}</div>`;
+  setTimeout(() => { container.innerHTML = ''; }, 4000);
 }
 
-document.querySelectorAll("nav button").forEach(b => {
-  b.onclick = () => showTab(b.dataset.tab);
-});
-
-function filterCourses(cat, btn){
-  let courseCont = document.getElementById("courseListContainer");
-  let chatSec = document.getElementById("chatSection");
-  
-  if(cat === 'chat'){
-    courseCont.style.display = "none";
-    chatSec.style.display = "block";
-    renderChatMessages();
-  } else {
-    courseCont.style.display = "block";
-    chatSec.style.display = "none";
-    document.querySelectorAll(".course-card").forEach(c => {
-      c.style.display = (cat === 'all' || c.dataset.cat === cat) ? "flex" : "none";
-    });
-  }
-}
-
-function openLesson(id, type){
-  alert(`กำลังเปิดเข้าสู่: บทเรียนที่ ${id} (${type})\n- เอกสารประกอบการเรียนและคลิปวิดีโอแบบเข้มข้น`);
-}
-
-function accessCourse(id){
-  document.getElementById("payModal").style.display = "flex";
-  document.getElementById("payCourseName").textContent = `ปลดล็อกคอร์สโปร บทที่ ${id} (VIP All Access)`;
-}
-
-function closePayModal(){
-  document.getElementById("payModal").style.display = "none";
-}
-
-function confirmPayment(){
-  currentUser.role = "vip";
-  localStorage.setItem("stock101_user", JSON.stringify(currentUser));
-  closePayModal();
-  applyRolePermissions();
-  addNotification("อัปเกรด VIP สำเร็จ", "คุณสามารถเข้าเรียนคอร์สเชิงลึกทุกบทเรียนได้แล้ว 🎉");
-  showAlert("ชำระเงินสำเร็จ! อัปเกรดเป็นสมาชิก VIP เรียบร้อยแล้ว", "success");
-}
-
-// แชทกับแอดมิน
-function sendChatMessage(){
-  let input = document.getElementById("chatInput");
-  let text = input.value.trim();
-  if(!text) return;
-  chatHistory.push({sender: 'user', text});
-  input.value = "";
-  
-  setTimeout(() => {
-    let reply = "อาจารย์รับทราบคำถามแล้วครับ เดี๋ยวช่วยตรวจพอร์ตและวิเคราะห์แนวโน้มให้ครับ สู้ๆ ครับ!";
-    if(text.includes("ปันผล")) reply = "หุ้นปันผลที่ดีควรมีอัตราผลตอบแทน (Dividend Yield) มากกว่า 4% และผลประกอบการเติบโตต่อเนื่องครับ";
-    chatHistory.push({sender: 'admin', text: reply});
-    localStorage.setItem("stock101_chat", JSON.stringify(chatHistory));
-    renderChatMessages();
-    addNotification("ข้อความใหม่จากอาจารย์", "อาจารย์ได้ตอบกลับข้อความของคุณแล้ว");
-  }, 1000);
-  
-  localStorage.setItem("stock101_chat", JSON.stringify(chatHistory));
-  renderChatMessages();
-}
-
-function renderChatMessages(){
-  let box = document.getElementById("chatMessages");
-  if(!box) return;
-  let html = `<div class="chat-msg admin">สวัสดีครับ ${currentUser.name}! มีข้อสงสัยเรื่องหุ้นหรือบทเรียนไหน สอบถามได้เลยนะครับ 👨‍🏫</div>`;
-  chatHistory.forEach(m => {
-    html += `<div class="chat-msg ${m.sender}">${m.text}</div>`;
-  });
-  box.innerHTML = html;
-  box.scrollTop = box.scrollHeight;
-}
-
-// อัปเดตข้อมูลแดชบอร์ด
+/* 7. Dashboard และรายงานผล */
 function updateDashboard(){
   let cost = 0, value = 0;
   let labels = [], dataVals = [];
@@ -580,7 +536,6 @@ function updateDashboard(){
   document.getElementById("dashProfit").textContent = money(profit);
   document.getElementById("dashProfit").className = "metric " + (profit >= 0 ? "green" : "red");
 
-  // อัปเดตกราฟสัดส่วนพอร์ต
   if(portfolioChart) portfolioChart.destroy();
   portfolioChart = new Chart(document.getElementById("portfolioChart"), {
     type: "doughnut",
@@ -592,66 +547,54 @@ function updateDashboard(){
   });
 }
 
+function showTab(id){
+  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("active", b.classList.contains(`tab-${id}`)));
+  if(id === "admin") renderAdminStocks();
+  if(id === "status") renderOrders();
+  if(id === "dashboard") updateDashboard();
+}
+
+document.querySelectorAll("nav button").forEach(b => {
+  b.onclick = () => showTab(b.dataset.tab);
+});
+
 function fillSelects(){
   let opts = stocks.map((s, i) => `<option value="${i}">${s.symbol} — ${s.name}</option>`).join("");
-  document.getElementById("dcaStock").innerHTML = opts;
-  document.getElementById("pStock").innerHTML = opts;
+  document.getElementById("tradeStock").innerHTML = opts;
+  updateTradePrice();
 }
 
-function initApp(){
-  fillSelects();
-  updatePortfolio();
-  applyRolePermissions();
-  updateNotifUI();
-  if(!localStorage.getItem("stock101_user")) openLoginModal();
-}
+function updatePortfolio(){
+  let tbody = document.getElementById("portfolioBody");
+  if(!tbody) return;
+  let totalCost = 0, totalVal = 0;
+  
+  tbody.innerHTML = portfolio.map((p, i) => {
+    let s = stocks.find(x => x.symbol === p.symbol) || {price: p.buy};
+    let c = p.shares * p.buy;
+    let v = p.shares * s.price;
+    let profit = v - c;
+    totalCost += c;
+    totalVal += v;
+    let cls = profit >= 0 ? "green" : "red";
+    return `<tr>
+      <td><strong>${p.symbol}</strong></td>
+      <td>${p.shares}</td>
+      <td>฿${p.buy}</td>
+      <td>฿${s.price}</td>
+      <td class="${cls}">${money(profit)}</td>
+      <td><button onclick="removePortfolio(${i})">ลบ</button></td>
+    </tr>`;
+  }).join("");
 
-function calcDCA(){
-  let idx = +document.getElementById("dcaStock").value;
-  let s = stocks[idx];
-  let amount = +document.getElementById("dcaAmount").value;
-  let months = +document.getElementById("dcaMonths").value;
-  if(!s || amount <= 0 || months <= 0) return;
+  let totalProfit = totalVal - totalCost;
+  document.getElementById("homeCost").textContent = money(totalCost);
+  document.getElementById("homeProfit").textContent = money(totalProfit);
+  document.getElementById("homeProfit").className = "metric " + (totalProfit >= 0 ? "green" : "red");
   
-  let shares = 0, cost = 0, vals = [];
-  for(let i = 0; i < months; i++){
-    let p = s.price * (.85 + i * (.3 / months));
-    shares += amount / p;
-    cost += amount;
-    vals.push(+(shares * s.price).toFixed(2));
-  }
-  let value = shares * s.price;
-  let profit = value - cost;
-  
-  document.getElementById("dcaCost").textContent = money(cost);
-  document.getElementById("dcaShares").textContent = shares.toFixed(2);
-  document.getElementById("dcaValue").textContent = money(value);
-  document.getElementById("dcaProfit").textContent = money(profit);
-  document.getElementById("dcaProfit").className = "metric " + (profit >= 0 ? "green" : "red");
-  
-  if(dcaChart) dcaChart.destroy();
-  dcaChart = new Chart(document.getElementById("dcaChart"), {
-    type: "line",
-    data: {
-      labels: vals.map((_, i) => `${i+1}`),
-      datasets: [{label: "DCA", data: vals, borderColor: '#35d07f', backgroundColor: 'transparent', tension: .25}]
-    },
-    options: {responsive: true, maintainAspectRatio: false, plugins:{legend:{display:false}}}
-  });
-  showAlert(`คำนวณ DCA ${s.symbol} สำเร็จ`, 'success');
-}
-
-function addPortfolio(){
-  let idx = +document.getElementById("pStock").value;
-  let s = stocks[idx];
-  let shares = +document.getElementById("pShares").value;
-  let buy = +document.getElementById("pBuy").value;
-  if(!s || shares <= 0 || buy < 0) return;
-  portfolio.push({symbol: s.symbol, shares, buy});
-  localStorage.setItem("stock101_portfolio", JSON.stringify(portfolio));
-  updatePortfolio();
-  addNotification("เพิ่มหุ้นเข้าพอร์ต", `บันทึกซื้อ ${s.symbol} จำนวน ${shares} หุ้นเรียบร้อย`);
-  showAlert(`บันทึกซื้อหุ้น ${s.symbol} แล้ว`, 'success');
+  updateDashboard();
 }
 
 function removePortfolio(i){
@@ -660,65 +603,53 @@ function removePortfolio(i){
   updatePortfolio();
 }
 
-function updatePortfolio(){
-  let cost = 0, value = 0;
-  let bodyHTML = portfolio.map((p, i) => {
-    let s = stocks.find(x => x.symbol === p.symbol) || {price: p.buy};
-    let c = p.shares * p.buy;
-    let v = p.shares * s.price;
-    let pr = v - c;
-    cost += c;
-    value += v;
-    return `<tr><td><strong>${p.symbol}</strong></td><td>${p.shares}</td><td>${money(p.buy)}</td><td>${money(s.price)}</td><td class="${pr >= 0 ? 'green' : 'red'}">${money(pr)}</td><td><button onclick="removePortfolio(${i})">ลบ</button></td></tr>`;
-  }).join("") || `<tr><td colspan="6" class="muted" style="text-align:center;">ยังไม่มีหุ้นในพอร์ต</td></tr>`;
-  
-  document.getElementById("portfolioBody").innerHTML = bodyHTML;
-  let profit = value - cost;
-  
-  ["homeCost"].forEach(id => {let el = document.getElementById(id); if(el) el.textContent = money(cost);});
-  let hProfEl = document.getElementById("homeProfit");
-  let profStr = money(profit);
-  if(hProfEl) { hProfEl.textContent = profStr; hProfEl.className = "metric " + (profit >= 0 ? "green" : "red"); }
-}
-
-function renderAdminStocks(){
-  let tbody = document.getElementById("adminStockTable");
-  if(!tbody) return;
-  tbody.innerHTML = stocks.map((s, index) => `
-    <tr>
-      <td><strong>${s.symbol}</strong></td>
-      <td>${s.name}</td>
-      <td>${money(s.price)}</td>
-      <td><button onclick="adminDeleteStock(${index})">ลบ</button></td>
-    </tr>
-  `).join("");
-}
-
+/* 2. จัดการข้อมูล (Admin) */
 function adminAddStock(){
-  let symbol = document.getElementById("admSymbol").value.trim().toUpperCase();
+  let sym = document.getElementById("admSymbol").value.trim().toUpperCase();
   let name = document.getElementById("admName").value.trim();
-  let group = document.getElementById("admGroup").value;
+  let grp = document.getElementById("admGroup").value;
   let price = +document.getElementById("admPrice").value;
-  if(!symbol || !name || price <= 0){ alert("กรอกข้อมูลไม่ครบ"); return; }
-  stocks.unshift({symbol, name, group, market: group === "th" ? "หุ้นไทย (SET)" : "ต่างประเทศ", price, change: 1.0, div: 3.0});
+  if(!sym || !name || price <= 0) return;
+  
+  stocks.push({symbol: sym, name, group: grp, market: grp==='th'?'หุ้นไทย (SET)':'ต่างประเทศ', price, change: 0, div: 2.5});
   localStorage.setItem("stock101_stocks", JSON.stringify(stocks));
   fillSelects();
   renderAdminStocks();
   document.getElementById("admSymbol").value = "";
   document.getElementById("admName").value = "";
-  showAlert(`เพิ่มหุ้น ${symbol} สำเร็จ`, 'success');
+  showAlert(`เพิ่มข้อมูลหุ้น ${sym} สำเร็จ`, 'success');
 }
 
-function adminDeleteStock(index){
-  if(confirm("ลบหุ้นนี้?")){
-    stocks.splice(index, 1);
-    localStorage.setItem("stock101_stocks", JSON.stringify(stocks));
-    fillSelects();
-    renderAdminStocks();
-  }
+function renderAdminStocks(){
+  let tbody = document.getElementById("adminStockTable");
+  if(!tbody) return;
+  tbody.innerHTML = stocks.map((s, i) => `
+    <tr>
+      <td><strong>${s.symbol}</strong></td>
+      <td>${s.name}</td>
+      <td>฿${s.price}</td>
+      <td><button onclick="removeStock(${i})">ลบ</button></td>
+    </tr>
+  `).join("");
 }
 
-initApp();
+function removeStock(i){
+  stocks.splice(i, 1);
+  localStorage.setItem("stock101_stocks", JSON.stringify(stocks));
+  fillSelects();
+  renderAdminStocks();
+}
+
+function initApp(){
+  fillSelects();
+  updatePortfolio();
+  renderOrders();
+  applyRolePermissions();
+  updateNotifUI();
+  if(!localStorage.getItem("stock101_user")) openLoginModal();
+}
+
+window.onload = initApp;
 </script>
 </body>
 </html>
